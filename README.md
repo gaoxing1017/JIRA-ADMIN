@@ -22,24 +22,6 @@
 
 English | [简体中文](./README.zh-CN.md)
 
-## Introduction
-
-`vue-element-admin` is a production-ready solution for admin interfaces. Based on [Vue.js](https://github.com/vuejs/vue) and use the UI Toolkit -- [element](https://github.com/ElemeFE/element). `vue-element-admin` is a magical vue admin, it based on the newest development stack of vue, built-in i18n solution, typical templates for enterprise applications, lots of awesome features. It helps you build a large complex Single-Page Applications. I believe whatever your needs are, this project will help you.
-
-- [Preview](http://panjiachen.github.io/vue-element-admin)
-
-- [Documentation](https://panjiachen.github.io/vue-element-admin-site/#/)
-
-- [Gitter](https://gitter.im/vue-element-admin/discuss)
-
-- [Wiki](https://github.com/PanJiaChen/vue-element-admin/wiki)
-
-- [Donate](https://panjiachen.github.io/vue-element-admin-site/#/donate)
-
-**vue-element-admin is a admin interfaces integration solution, which is not suitable for secondary development as a base template.**
-
- - Base template recommends using: [vueAdmin-template](https://github.com/PanJiaChen/vueAdmin-template)  
- - Desktop: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
 
 **Note: This project uses element-ui@2.3.0+ version, so the minimum compatible vue@2.5.0+**
 
@@ -58,48 +40,19 @@ You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) l
 ## Features
 ```
 - Login / Logout
-- Permission authentication
 - Multi-environment build
 - Dynamic sidebar (supports multi-level routing)
 - Dynamic breadcrumb
 - I18n
 - Customizable theme
-- Tags-view(Tab page Support right-click operation)
-- Rich text editor
-- Markdown editor
-- JSON editor
-- Screenfull
-- Drag and drop list
-- Svg Sprite
-- Dashboard
-- Mock data
-- Echarts
-- Clipboard
-- 401/404 error page
-- Error log
-- Export excel
-- Export zip
-- Front-end visualization excel
-- Tree Table
-- Table example
-- Dynamictable example
-- Drag and drop table example
-- Inline edit table example
-- Form example
-- Two-step login
-- SplitPane
-- Drag Dialog
-- Dropzone
-- Sticky
-- CountTo
-- Markdown to html
+- Jira DATA Statics
 ```
 
 ## Getting started
 
 ```bash
 # clone the project
-git clone https://github.com/PanJiaChen/vue-element-admin.git
+git clone https://github.com/gaoxing1017/data-statics-admin.git
 
 # install dependency
 npm install
@@ -134,25 +87,8 @@ npm run lint
 npm run lint -- --fix
 ```
 
-Refer to [Documentation](https://panjiachen.github.io/vue-element-admin-site/#/deploy) for more information
-
-## Changelog
-Detailed changes for each release are documented in the [release notes](https://github.com/PanJiaChen/vue-element-admin/releases).
-
-## Online Demo
-[Preview](http://panjiachen.github.io/vue-element-admin)
-
-## Donate
-If you find this project useful, you can buy author a glass of juice :tropical_drink:
-
-![donate](https://wpimg.wallstcn.com/bd273f0d-83a0-4ef2-92e1-9ac8ed3746b9.png)
-
-[Paypal Me](https://www.paypal.me/panfree23)
-
-[Buy me a coffee](https://www.buymeacoffee.com/Pan)
-
 ## License
 
-[MIT](https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE)
+[MIT](https://github.com/gaoxing1017/data-statics-admin/blob/master/LICENSE)
 
-Copyright (c) 2017-present PanJiaChen
+Copyright (c) 2017-present GX
