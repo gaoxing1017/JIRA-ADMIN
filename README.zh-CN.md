@@ -31,7 +31,7 @@
 你的本地环境需要安装 [node](http://nodejs.org/) 和 [git](https://git-scm.com/)。我们的技术栈基于 [ES2015+](http://es6.ruanyifeng.com/)、[vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/) and [element-ui](https://github.com/ElemeFE/element)，所有的请求数据都使用[Mock.js](https://github.com/nuysoft/Mock)模拟，提前了解和学习这些知识会对使用本项目有很大的帮助。
 
  <p align="center">
-  <img width="900" src="https://github.com/gaoxing1017/data-statics-admin/raw/dev/data-statics.png">
+  <img width="900" src="https://github.com/gaoxing1017/Jira-Admin/raw/dev/data-statics.png">
 </p>
 
 ## 功能
@@ -50,7 +50,7 @@
 ## 开发
 ```bash
 # 克隆项目
-git clone https://github.com/gaoxing1017/data-statics-admin.git
+git clone https://github.com/gaoxing1017/Jira-Admin.git
 
 # 安装依赖
 npm install
@@ -89,6 +89,6 @@ npm run lint -- --fix
 
 ## License
 
-[MIT](https://github.com/gaoxing1017/data-statics-admin/blob/master/LICENSE)
+[MIT](https://github.com/gaoxing1017/Jira-Admin/blob/master/LICENSE)
 
 Copyright (c) 2017-present 高兴

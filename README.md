@@ -34,7 +34,7 @@ You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) l
  **This project does not support low version browsers (e.g. IE). Please add polyfill yourself if you need them.**
 
  <p align="center">
-  <img width="900" src="https://github.com/gaoxing1017/data-statics-admin/raw/dev/data-statics.png">
+  <img width="900" src="https://github.com/gaoxing1017/Jira-Admin/raw/dev/data-statics.png">
 </p>
 
 ## Features
@@ -52,7 +52,7 @@ You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) l
 
 ```bash
 # clone the project
-git clone https://github.com/gaoxing1017/data-statics-admin.git
+git clone https://github.com/gaoxing1017/Jira-Admin.git
 
 # install dependency
 npm install
@@ -89,6 +89,6 @@ npm run lint -- --fix
 
 ## License
 
-[MIT](https://github.com/gaoxing1017/data-statics-admin/blob/master/LICENSE)
+[MIT](https://github.com/gaoxing1017/Jira-Admin/blob/master/LICENSE)
 
 Copyright (c) 2017-present GX
