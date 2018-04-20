@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="320" src="https://wpimg.wallstcn.com/ecc53a42-d79b-42e2-8852-5126b810a4c8.svg">
+  <img width="320" src="https://vuejs.org/images/logo.png">
 </p>
 
 <p align="center">
@@ -32,9 +32,9 @@ You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) l
  **This project is not a scaffolding and is more of an integrated solution.**
 
  **This project does not support low version browsers (e.g. IE). Please add polyfill yourself if you need them.**
-
+
  <p align="center">
-  <img width="900" src="https://wpimg.wallstcn.com/a5894c1b-f6af-456e-82df-1151da0839bf.png">
+  <img width="900" src="https://github.com/gaoxing1017/data-statics-admin/raw/dev/data-statics.png">
 </p>
 
 ## Features
