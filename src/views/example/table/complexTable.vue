@@ -16,12 +16,12 @@
     </template>
     <template>
       <span>{{$t('select.title')}}:</span>
-      <el-select v-model="selectedDevelopers" multiple filterable :placeholder="$t('select.placeholder')">
+      <el-select v-model="selectedOption" :placeholder="$t('select.placeholder')">
         <el-option
-          v-for="item in developers"
-          :key="item.name"
-          :label="item.chinese"
-          :value="item.name">
+          v-for="item in selectOptions"
+          :key="item.value"
+          :label="item.text"
+          :value="item.value">
         </el-option>
       </el-select>
     </template>
@@ -33,18 +33,20 @@
 
     <el-table :key='tableKey' :data="list" v-loading="listLoading" :element-loading-text="$t('table.loading')" show-summary stripe fit highlight-current-row
       style="width: 100%" :default-sort = "{prop: 'bugCount', order: 'descending'}">
-      <el-table-column align="center" :label="$t('table.id')" width="100" type="index">
+      <el-table-column align="center" :label="$t('table.id')" width="70" type="index">
       </el-table-column>
       <el-table-column prop="name" width="120px" align="center" :label="$t('table.developer')" :formatter="nameFormat"
       :filters="developerFilterOptions" :filter-method="filterHandler">
       </el-table-column>
       <el-table-column prop="storyPoints" width="100px" align="center" :label="$t('table.storyPoint')" sortable >
       </el-table-column>
+      <el-table-column prop="bugStoryPoints" width="120px" align="center" :label="$t('table.bugStoryPoint')" sortable >
+      </el-table-column>
       <el-table-column prop="bugCount" width="100px" align="center" :label="$t('table.bugCount')" sortable >
       </el-table-column>
       <el-table-column prop="returnTime" width="100px" align="center" :label="$t('table.returnCount')" sortable >
       </el-table-column>
-      <el-table-column prop="delayTaskCount" width="120px" align="center" :label="$t('table.delayCount')" sortable >
+      <el-table-column prop="delayTaskCount" width="100px" align="center" :label="$t('table.delayCount')" sortable >
       </el-table-column>
       <el-table-column align="center" :label="$t('table.detail')" min-width="230" class-name="small-padding fixed-width">
         <template slot-scope="scope">
@@ -92,7 +94,31 @@ const developerOptions = [
   { name: 'zengqinggui', chinese: '曾庆贵' },
   { name: 'gongjunqing', chinese: '龚俊卿' },
   { name: 'luozheng', chinese: '罗蒸' },
-  { name: 'zhengxiang', chinese: '郑翔' }
+  { name: 'zhengxiang', chinese: '郑翔' },
+  // 服务端
+  { name: 'caizhongheng', chinese: '蔡忠亨' },
+  { name: 'wangpengfei', chinese: '王鹏飞' },
+  { name: 'liangfei', chinese: '梁飞' },
+  { name: 'lijiaren', chinese: '李佳任' },
+  { name: 'xufeiyang', chinese: '徐飞阳' },
+  { name: 'taoyemeng', chinese: '陶冶梦' },
+  { name: 'huminghu', chinese: '胡明湖' },
+  { name: 'zhuwenjie', chinese: '朱文杰' },
+  { name: 'caihong', chinese: '蔡红' },
+  { name: 'fengyan', chinese: '冯岩' },
+
+  // 安卓
+  { name: 'jinsheng', chinese: '金圣' },
+  { name: 'wangzhonghao', chinese: '王忠皓' },
+  { name: 'wangdapeng', chinese: '汪大鹏' },
+  { name: 'pengchenwei', chinese: '彭晨伟' },
+  { name: 'luying', chinese: '陆嬴' },
+  { name: 'douyeliang', chinese: '窦烨良' },
+  { name: 'zhangjin', chinese: '张金' },
+  { name: 'ruanyitai', chinese: '阮宜太' },
+  { name: 'mashoujun', chinese: '马守君' },
+  { name: 'shibing', chinese: '石冰' }
+
 ]
 // arr to obj ,such as { CN : "China", US : "USA" }
 const calendarTypeKeyValue = calendarTypeOptions.reduce((acc, cur) => {
@@ -114,10 +140,13 @@ export default {
       QueryDate: [],
       listQuery: {
         startTime: '',
-        endTime: ''
+        endTime: '',
+        type: 0
       },
-      selectedDevelopers: [],
-      developers: developerOptions,
+      selectedOption: { text: '徐汇', value: 0 },
+      selectOptions: [{ text: '徐汇', value: 0 },
+        { text: '安卓', value: 1 },
+        { text: '服务端', value: 2 }],
       developerFilterOptions: [],
       showReviewer: false,
       dialogPvVisible: false,
@@ -183,6 +212,7 @@ export default {
     handleFilter() {
       this.listQuery.startTime = this.QueryDate[0]
       this.listQuery.endTime = this.QueryDate[1]
+      this.listQuery.type = this.selectedOption
       this.getList()
     },
     nameFormat(row, col) {
@@ -196,8 +226,8 @@ export default {
     handleDownload() {
       this.downloadLoading = true
       import('@/vendor/Export2Excel').then(excel => {
-        const tHeader = ['姓名', '故事点', 'BUG数', '打回数', '逾期数', '故事明细', 'BUG明细', '打回明细', '逾期明细']
-        const filterVal = ['name', 'storyPoints', 'bugCount', 'returnTime', 'delayTaskCount', 'issues', 'bugs', 'returnList', 'delayList']
+        const tHeader = ['姓名', '故事点', 'Bug故事点', 'BUG数', '打回数', '逾期数', '故事明细', '子任务明细', 'BUG明细', '打回明细', '逾期明细']
+        const filterVal = ['name', 'storyPoints', 'bugStoryPoints', 'bugCount', 'returnTime', 'delayTaskCount', 'issues', 'subTasks', 'bugs', 'returnList', 'delayList']
         const data = this.formatJson(filterVal, this.list)
         excel.export_json_to_excel({
           header: tHeader,

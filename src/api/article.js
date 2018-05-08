@@ -7,7 +7,13 @@ export function fetchList(query) {
     params: query
   })
 }
-
+export function fetchTestKpi(query) {
+  return request({
+    url: '/v1/tester',
+    method: 'get',
+    params: query
+  })
+}
 export function fetchArticle() {
   return request({
     url: '/article/detail',
